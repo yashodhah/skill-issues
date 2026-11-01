@@ -1,34 +1,36 @@
-# yashodha-skills
+# skill-issues
 
-Personal Claude Code skills, packaged as a plugin marketplace. Every skill is
-manual-only: it runs when you type `/<skill-name>`, never automatically.
+My personal Claude Code skills. Each one is isolated and runs only when I type it.
 
-## Skills
-
-| Command | What it does |
+| Command | Use it to |
 |---|---|
-| `/aste-100 <text>` | Rewrites or writes text in ASD-STE100 Simplified Technical English. |
-| `/animated-explainer <topic>` | Makes one interactive HTML animation of how something works. |
-| `/first-principles <problem>` | Reasons from verified basic facts to an answer. |
+| `/fp` | Break a problem into its smallest verified facts and find the actual problem |
+| `/anim` | Get an interactive HTML animation of how something works |
+| `/ste` | Rewrite text in ASD-STE100 Simplified Technical English |
+
+With no argument, each command works on the topic or message we are discussing.
+Combine them by typing them in sequence, for example `/fp` then `/anim`.
+
+## Install
+
+Copy the skills into your personal skills folder once:
+
+```bash
+git clone https://github.com/yashodhah/skill-issues.git
+mkdir -p ~/.claude/skills
+cp -r skill-issues/skills/* ~/.claude/skills/
+```
+
+Start a new Claude Code session after copying, so the commands are picked up.
 
 ## Layout
 
 ```
-.claude-plugin/marketplace.json            marketplace listing
-plugins/personal-skills/
-  .claude-plugin/plugin.json               plugin manifest
-  skills/<skill-name>/SKILL.md             one folder per skill
+skills/
+  fp/SKILL.md
+  anim/SKILL.md
+  ste/SKILL.md
 ```
 
-To add a skill, create `plugins/personal-skills/skills/<name>/SKILL.md` with
-`name` matching the folder and `disable-model-invocation: true` in the
-frontmatter. Bump `version` in `plugin.json` and `marketplace.json`.
-
-## Install
-
-```
-/plugin marketplace add yashodhah/skill-issues
-/plugin install personal-skills@yashodha-skills
-```
-
-For a local checkout, use the repo path in place of `yashodhah/skill-issues`.
+Each skill is a folder with one `SKILL.md`. To add one, create `skills/<name>/SKILL.md`
+with `disable-model-invocation: true` in its frontmatter so it runs only when typed.
