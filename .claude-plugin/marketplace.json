@@ -1,0 +1,17 @@
+{
+  "$schema": "https://anthropic.com/claude-code/marketplace.schema.json",
+  "name": "yashodha-skills",
+  "description": "Personal Claude skills by yashodhah: runtime system intelligence, code review, and coding standards.",
+  "owner": {
+    "name": "yashodhah"
+  },
+  "plugins": [
+    {
+      "name": "newrelic-system-intelligence",
+      "source": "./plugins/newrelic-system-intelligence",
+      "description": "Gives an agent a runtime view of a distributed system via New Relic: dependencies, health, change impact, latency, and incidents.",
+      "version": "1.0.0",
+      "category": "observability"
+    }
+  ]
+}

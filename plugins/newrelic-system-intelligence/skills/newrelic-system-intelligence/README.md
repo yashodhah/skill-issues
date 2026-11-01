@@ -72,7 +72,7 @@ correctly.
 ## Repository Layout
 
 ```
-newrelic-system-skill/
+newrelic-system-intelligence/
 ├── SKILL.md                         master skill definition (agent reads this first)
 ├── README.md                        this file
 ├── requirements.txt                 httpx pinned to 0.27.0
