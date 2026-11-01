@@ -1,9 +1,0 @@
-{
-  "name": "newrelic-system-intelligence",
-  "version": "1.0.0",
-  "description": "Runtime system intelligence from New Relic: service topology, golden metrics, SLOs, errors, traces, deployments, and incident context. Pure Python 3.8+, JSON output.",
-  "author": {
-    "name": "yashodhah"
-  },
-  "keywords": ["newrelic", "observability", "sre", "incident", "topology", "latency"]
-}
